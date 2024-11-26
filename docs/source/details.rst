@@ -1,7 +1,7 @@
-[--solutionname--] Details
+[cyt160proj02-4a57] Details
 ============================
 
-Generated On: --datetime-- UTC
+Generated On: 2024-11-26 17:40:58 UTC
 
 TML Solution DAG Parameters' Details: User Chosen Parametets
 ----------------------------
@@ -14,19 +14,19 @@ STEP 1: Get TML Core Params: `tml_system_step_1_getparams_dag <https://tml.readt
    * - **User Parameter**
      - **Chosen Value**
    * - solutionname
-     - --solutionname--
+     - cyt160proj02-4a57
    * - solutiontitle
-     - --solutiontitle--
+     - My Solution Title
    * - solutiondescription
-     - --solutiondescription--
+     - This is an awesome real-time solution built by TSS
    * - brokerhost
-     - --brokerhost--
+     - 127.0.0.1
    * - brokerport
-     - --brokerport--
+     - 9092
    * - cloudusername
-     - --cloudusername--
+     - None
    * - ingestdatamethod
-     - --ingestdatamethod--
+     - LOCALFILE
  
 STEP 2: Create Kafka Topics: `tml_system_step_2_kafka_createtopic_dag <https://tml.readthedocs.io/en/latest/tmlbuilds.html#step-2-create-kafka-topics-tml-system-step-2-kafka-createtopic-dag>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -36,29 +36,29 @@ STEP 2: Create Kafka Topics: `tml_system_step_2_kafka_createtopic_dag <https://t
    * - **User Parameter**
      - **Chosen Value**
    * - companyname
-     - --companyname--
+     - Otics
    * - myname
-     - --myname--
+     - Sebastian
    * - myemail
-     - --myemail--
+     - Sebastian.Maurice
    * - mylocation
-     - --mylocation--
+     - Toronto
    * - replication
-     - --replication--
+     - 1
    * - numpartitions
-     - --numpartitions--
+     - 1
    * - enabletls
-     - --enabletls--
+     - 1
    * - microserviceid
-     - --microserviceid--
+     - 
    * - raw_data_topic
-     - --raw_data_topic--
+     - cisco-network-mainstream
    * - preprocess_data_topic
-     - --preprocess_data_topic--
+     - cisco-network-preprocess
    * - ml_data_topic
-     - --ml_data_topic--
+     - ml-data
    * - prediction_data_topic
-     - --prediction_data_topic--
+     - prediction-data
 
 STEP 3: `Produce to Kafka Topics <https://tml.readthedocs.io/en/latest/tmlbuilds.html#step-3-produce-to-kafka-topics>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -68,25 +68,25 @@ STEP 3: `Produce to Kafka Topics <https://tml.readthedocs.io/en/latest/tmlbuilds
    * - **User Parameter**
      - **Chosen Value**
    * - PRODUCETYPE
-     - --PRODUCETYPE--
+     - LOCALFILE
    * - TOPIC
-     - --TOPIC--
+     - iot-raw-data
    * - PORT
-     - --PORT--
+     - 38595
    * - IDENTIFIER
-     - --IDENTIFIER--
+     - TML solution,/rawdata/IoTData.txt
    * - HTTPADDR
-     - --HTTPADDR--
+     - https://
    * - FROMHOST
-     - --FROMHOST--
+     - ('jonalyn-vm', '127.0.1.1')
    * - TOHOST
-     - --TOHOST--
+     - 127.0.1.1
    * - CLIENTPORT
-     - --CLIENTPORT--
+     - Not Applicable
    * - TSS_CLIENTPORT
-     - --TSSCLIENTPORT--
+     - Not Applicable
    * - TML_CLIENTPORT
-     - --TMLCLIENTPORT--
+     - Not Applicable
 
 STEP 4: Preprocesing Data: `tml-system-step-4-kafka-preprocess-dag <https://tml.readthedocs.io/en/latest/tmlbuilds.html#step-4-preprocesing-data-tml-system-step-4-kafka-preprocess-dag>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -96,33 +96,33 @@ STEP 4: Preprocesing Data: `tml-system-step-4-kafka-preprocess-dag <https://tml.
    * - **User Parameter**
      - **Chosen Value**
    * - raw_data_topic
-     - --raw_data_topic--
+     - cisco-network-mainstream
    * - preprocess_data_topic
-     - --preprocess_data_topic--
+     - cisco-network-preprocess
    * - preprocessconditions
-     - --preprocessconditions--
+     - 
    * - delay
-     - --delay--
+     - 70
    * - array
-     - --array--
+     - 0
    * - saveasarray
-     - --saveasarray--
+     - 1
    * - topicid
-     - --topicid--
+     - -999
    * - rawdataoutput
-     - --rawdataoutput--
+     - 1
    * - asynctimeout
-     - --asynctimeout--
+     - 120
    * - timedelay
-     - --timedelay--
+     - 0
    * - preprocesstypes
-     - --preprocesstypes--
+     - min,max,trend,anomprob,variance,avg
    * - pathtotmlattrs
      - --pathtotmlattrs--
    * - identifier
-     - --identifier--
+     - Detect potential cyber attacks and monitor network
    * - jsoncriteria
-     - --jsoncriteria--
+     - uid=hostName,filter:allrecords~subtopics=hostName,hostName,hostName~values=inboundpackets,outboundpackets,pingStatus~identifiers=inboundpackets,outboundpackets,pingStatus~datetime=lastUpdated~msgid=~latlong=
 
 STEP 4b: Preprocesing Data: `tml-system-step-4b-kafka-preprocess-dag <https://tml.readthedocs.io/en/latest/tmlbuilds.html#step-4b-preprocesing-data-tml-system-step-4b-kafka-preprocess-dag>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -168,13 +168,13 @@ STEP 5: Entity Based Machine Learning : `tml-system-step-5-kafka-machine-learnin
    * - **User Parameter**
      - **Chosen Value**
    * - preprocess_data_topic
-     - --preprocess_data_topic--
+     - cisco-network-preprocess
    * - ml_data_topic
-     - --ml_data_topic--
+     - ml-data
    * - modelruns
      - --modelruns--
    * - offset
-     - --offset--
+     - -1
    * - islogistic
      - --islogistic--
    * - networktimeout
@@ -190,7 +190,7 @@ STEP 5: Entity Based Machine Learning : `tml-system-step-5-kafka-machine-learnin
    * - rollbackoffsets
      - --rollbackoffsets--
    * - topicid
-     - --topicid--
+     - -999
    * - consumefrom
      - --consumefrom--
    * - fullpathtotrainingdata
@@ -212,7 +212,7 @@ STEP 6: Entity Based Predictions: `tml-system-step-6-kafka-predictions-dag <http
    * - **User Parameter**
      - **Chosen Value**
    * - preprocess_data_topic
-     - --preprocess_data_topic--
+     - cisco-network-preprocess
    * - ml_prediction_topic
      - --ml_prediction_topic--
    * - streamstojoin
@@ -222,9 +222,9 @@ STEP 6: Entity Based Predictions: `tml-system-step-6-kafka-predictions-dag <http
    * - consumefrom
      - --consumefrom2--
    * - offset
-     - --offset--
+     - -1
    * - delay
-     - --delay--
+     - 70
    * - usedeploy
      - --usedeploy--
    * - networktimeout
@@ -232,7 +232,7 @@ STEP 6: Entity Based Predictions: `tml-system-step-6-kafka-predictions-dag <http
    * - maxrows
      - --maxrows--
    * - topicid
-     - --topicid--
+     - -999
    * - pathtoalgos
      - --pathtoalgos--
 
@@ -244,21 +244,21 @@ STEP 7: Real-Time Visualization: `tml-system-step-7-kafka-visualization-dag <htt
    * - **User Parameter**
      - **Chosen Value**
    * - vipervizport
-     - --vipervizport--
+     - 9005
    * - topic
-     - --topic--
+     - cisco-network-preprocess,cisco-network-privategpt
    * - dashboardhtml
-     - --dashboardhtml--
+     - tml-cisco-network-privategpt-monitor.html
    * - secure
-     - --secure--
+     - 1
    * - offset
-     - --offset--
+     - -1
    * - append
-     - --append--
+     - 0
    * - chip
-     - --chip--
+     - amd64
    * - rollbackoffset
-     - --rollbackoffset--
+     - 400
 
 STEP 8: `tml_system_step_8_deploy_solution_to_docker_dag <https://tml.readthedocs.io/en/latest/tmlbuilds.html#step-8-deploy-tml-solution-to-docker-tml-system-step-8-deploy-solution-to-docker-dag>`_
 ^^^^^^^^^^^^^^^^^^^^^
@@ -267,9 +267,9 @@ STEP 8: `tml_system_step_8_deploy_solution_to_docker_dag <https://tml.readthedoc
    * - **User Parameter**
      - **Chosen Value**
    * - Docker Container
-     - --dockercontainer--
+     - xXjona18Xx/cyt160proj02-4a57-amd64 (https://hub.docker.com/r/xXjona18Xx/cyt160proj02-4a57-amd64)
    * - Docker Run Command
-     - --dockerrun--
+     - docker run -d -p 34237:34237 -p 33863:33863 -p 40115:40115 \-\-env TSS=0 \-\-env SOLUTIONNAME=cyt160proj02-4a57 \-\-env SOLUTIONDAG=solution_preprocessing_dag-cyt160proj02-4a57 \-\-env GITUSERNAME=167594225-myseneca  \-\-env GITREPOURL=https://github.com/167594225-myseneca/cyt160-raspberrypi.git \-\-env SOLUTIONEXTERNALPORT=34237  -v /var/run/docker.sock:/var/run/docker.sock:z  \-\-env CHIP=amd64 \-\-env SOLUTIONAIRFLOWPORT=33863  \-\-env SOLUTIONVIPERVIZPORT=40115 \-\-env DOCKERUSERNAME='xXjona18Xx'  \-\-env EXTERNALPORT=38595 \-\-env KAFKACLOUDUSERNAME=''  \-\-env VIPERVIZPORT=9005 \-\-env MQTTUSERNAME='xXjonaXx' \-\-env AIRFLOWPORT=9000  \-\-env MQTTPASSWORD='<Enter mqtt password>'  \-\-env KAFKACLOUDPASSWORD='<Enter API secret>'  \-\-env GITPASSWORD='<Enter Github Password>'  \-\-env READTHEDOCS='<Enter Readthedocs token>'  xXjona18Xx/cyt160proj02-4a57-amd64
 
 STEP 9: `tml_system_step_9_privategpt_qdrant_dag <https://tml.readthedocs.io/en/latest/tmlbuilds.html#step-9-privategpt-and-qdrant-integration-tml-system-step-9-privategpt-qdrant-dag>`_
 ^^^^^^^^^^^^^^^^^^^^^
@@ -290,13 +290,13 @@ STEP 9: `tml_system_step_9_privategpt_qdrant_dag <https://tml.readthedocs.io/en/
    * - pgpt_data_topic
      - --pgpt_data_topic--
    * - offset
-     - --offset--
+     - -1
    * - rollbackoffset
-     - --rollbackoffset--
+     - 400
    * - topicid
-     - --topicid--
+     - -999
    * - enabletls
-     - --enabletls--
+     - 1
    * - partition
      - --partition--
    * - prompt
@@ -329,4 +329,4 @@ STEP 10: `tml_system_step_10_documentation_dag <https://tml.readthedocs.io/en/la
    * - **User Parameter**
      - **Chosen Value**
    * - Solution Documentation URL
-     - --readthedocs--
+     - https://cyt160proj02-4a57.readthedocs.io
